@@ -17,9 +17,11 @@ def consolidate_cart(cart)
     first_new_item=cart[0]
     num_of_that_item=(cart.select {|e| e[:item]==first_new_item[:item]}).length
     first_new_item[:count]=num_of_that_item
+    binding.pry
     new_cart<<first_new_item
     cart.reject! {|e| e[:item]==first_new_item[:item]}
   end
+  binding.pry
   new_cart
   # Consult README for inputs and outputs
   #
@@ -43,3 +45,5 @@ def consolidate_cart(cart)
   #  consolidated_cart
   #end
 end
+
+consolidate_cart([])
