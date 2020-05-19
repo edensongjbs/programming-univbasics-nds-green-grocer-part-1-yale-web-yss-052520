@@ -2,7 +2,11 @@ def find_item_by_name_in_collection(name, collection)
   # Implement me first!
   #
   # Consult README for inputs and outputs
-
+  collection.reduce do |found_item=nil, item_hash|
+    if item_hash[:item]==name
+      return found_item=item_hash
+    end
+  end
 end
 
 def consolidate_cart(cart)
@@ -12,6 +16,3 @@ def consolidate_cart(cart)
   # change `cart` (i.e. mutate) it. It's easier to return a new thing.
 
 end
-
-
-  
