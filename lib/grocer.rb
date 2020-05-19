@@ -17,12 +17,13 @@ def consolidate_cart(cart)
   cart.reduce do |consolidated_cart=[], item_hash|
     item_name=item_hash[:item]
     item_found=find_item_by_name_in_collection(item_name, cart)
-    if item_found do
-      consolidated_cart = consolidated_cart.map do |x|
-        if x[:item]==item_name
+    if item_found {
+      consolidated_cart = consolidated_cart.map { |x|
+        if x[:item]==item_name do
           x[:count]+=1
         end
-      end
+      }
+    }
     else
       item_hash[:count]=1
       consolidated_cart << item_hash
