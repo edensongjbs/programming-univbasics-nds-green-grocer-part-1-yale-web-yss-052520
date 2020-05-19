@@ -24,7 +24,7 @@ def consolidate_cart(cart)
         end
       end
     else do
-      item[:count]=1
+      item_hash[:count]=1
       consolidated_cart << item_hash
     end
     consolidated_cart
