@@ -4,16 +4,12 @@ def find_item_by_name_in_collection(name, collection)
   # Implement me first!
   #
   # Consult README for inputs and outputs
-  collection.reduce do |found_item=nil, item_hash|
-    if item_hash[:item]==name
-      return found_item=item_hash
-    end
-  end
+  collection.detect do |item| {item[:item]==name}
 end
 
 def consolidate_cart(cart)
   new_cart=[]
-  binding.pry
+  #binding.pry
   while cart[0] do
     first_new_item=cart[0]
     num_of_that_item=(cart.select {|e| e[:item]==first_new_item[:item]}).length
@@ -21,9 +17,9 @@ def consolidate_cart(cart)
     new_cart<<first_new_item
     cart.reject! {|e| e[:item]==first_new_item[:item]}
     cart.compact!
-    binding.pry
+  #  binding.pry
   end
-  binding.pry
+  #binding.pry
   new_cart
   # Consult README for inputs and outputs
   #
