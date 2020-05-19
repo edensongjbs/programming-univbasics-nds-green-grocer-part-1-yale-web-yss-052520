@@ -57,6 +57,6 @@ CART=[
   {:item => "SOY MILK", :price => 4.50, :clearance => true}
 ]
 
-CART2=[find_item_by_name_in_collection('AVOCADO', CART), find_item_by_name_in_collection('AVOCADO', CART), find_item_by_name_in_collection('KALE', CART)]
-puts CART2
-consolidate_cart(CART2)
+#CART2=[find_item_by_name_in_collection('AVOCADO', CART), find_item_by_name_in_collection('AVOCADO', CART), find_item_by_name_in_collection('KALE', CART)]
+#puts CART2
+#consolidate_cart(CART2)
