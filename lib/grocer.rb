@@ -14,14 +14,16 @@ def consolidate_cart(cart)
   #
   # REMEMBER: This returns a new Array that represents the cart. Don't merely
   # change `cart` (i.e. mutate) it. It's easier to return a new thing.
-  cart.reduce do |consolidated_cart=[], item_hash|
+  consolidated_cart=[]
+  cart.each do |item_hash|
     item_name=item_hash[:item]
     item_found=find_item_by_name_in_collection(item_name, cart)
-    if item_found {
-      consolidated_cart = consolidated_cart.map |x|
-        if x[:item]==item_name
-          x[:count]+=1
-    }
+    if item_found
+      consolidated_cart = consolidated_cart.map do |item_in_cart|
+        if item_in_cart[:item]==item_name
+          item_in_cart[:count]+=1
+        end
+      end
     else
       item_hash[:count]=1
       consolidated_cart << item_hash
