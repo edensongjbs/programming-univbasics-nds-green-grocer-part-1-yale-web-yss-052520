@@ -59,4 +59,6 @@ CART=[
   {:item => "SOY MILK", :price => 4.50, :clearance => true}
 ]
 
-consolidate_cart(CART)
+CART2=[avocado, avocado, find_item_by_name_in_collection('KALE', CART)]
+
+consolidate_cart(CART2)
