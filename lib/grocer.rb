@@ -20,6 +20,7 @@ def consolidate_cart(cart)
     binding.pry
     new_cart<<first_new_item
     cart.reject! {|e| e[:item]==first_new_item[:item]}
+    cart.compact!
   end
   binding.pry
   new_cart
@@ -59,6 +60,6 @@ CART=[
   {:item => "SOY MILK", :price => 4.50, :clearance => true}
 ]
 
-CART2=[find_item_by_name_in_collection('AVOCADO', CART), find_item_by_name_in_collection('AVOCADO', CART), find_item_by_name_in_collection('KALE', CART)]
+#CART2=[find_item_by_name_in_collection('AVOCADO', CART), find_item_by_name_in_collection('AVOCADO', CART), find_item_by_name_in_collection('KALE', CART)]
 
-consolidate_cart(CART2)
+#consolidate_cart(CART2)
