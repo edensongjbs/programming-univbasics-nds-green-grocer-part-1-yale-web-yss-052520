@@ -17,7 +17,7 @@ def consolidate_cart(cart)
   consolidated_cart=[]
   cart.each do |item_hash|
     item_name=item_hash[:item]
-    item_found=find_item_by_name_in_collection(item_name, cart)
+    item_found=find_item_by_name_in_collection(item_name, consolidated_cart)
     if item_found
       consolidated_cart = consolidated_cart.map do |item_in_cart|
         if item_in_cart[:item]==item_name
