@@ -22,7 +22,7 @@ def consolidate_cart(cart)
     item_found=find_item_by_name_in_collection(item_name, consolidated_cart)
     if item_found
       consolidated_cart = consolidated_cart.map do |item_in_cart|
-        if item_in_cart[:item]==item_name do
+        if item_in_cart[:item]==item_name
           binding.pry
           item_in_cart[:count]+=1
         end
